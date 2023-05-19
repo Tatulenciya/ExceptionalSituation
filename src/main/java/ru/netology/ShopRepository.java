@@ -25,7 +25,7 @@ public class ShopRepository {
      */
     public void add(Product product) {
         Product searchProduct = findById(product.id);
-        if (searchProduct == product) {
+        if (searchProduct != null) {
             throw new AlreadyExistsException(product.id);
         }
 
